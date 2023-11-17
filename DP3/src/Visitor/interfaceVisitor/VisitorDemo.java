@@ -82,7 +82,12 @@ class CarElementDoVisitor implements ICarElementVisitor {
     	System.out.println("Starting ICarElement");
     }
 }
-/*
+/*practice 1
  * 상속을 이용하면 모든 타입이 ICarElement형으로만 가능, car에 대한 코드만 의도한 기능으로 동작. 
  * overriding(dynamic binding) vs overloading(static binding)
+ * overloading을 사용함(method의 parameter가 다름. static binding을 사용) 즉, Compile time에 visit는 ICarElement형의 visit로 고정되어버림.
+ * 기존의 코드에서는 각 class마다 visitor.visit(this)가 존재하고, 이때 this가 각각의 type을 가리킴.
+ * 
+ * car에서 elem.accept(visitor);가 overriding, dynamic binding.
+ * elem-> run time에 결정, 결정된 elem에 따라 visitor 결정 ==> double dispatch
  * */
