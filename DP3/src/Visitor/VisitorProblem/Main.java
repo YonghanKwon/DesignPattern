@@ -25,9 +25,12 @@ public class Main {
             Kim.add(new File("diary.html", 100));
             Kim.add(new File("Composite.java", 200));
             Lee.add(new File("memo.tex", 300));
+            Lee.add(new File("temp.html",700));
             Park.add(new File("game.doc", 400));
             Park.add(new File("junk.mail", 500));
-            rootdir.accept(new ListVisitor());              
+            //rootdir.accept(new ListVisitor());
+            
+            rootdir.accept(new FileFindVisitor("html"));
         } catch (FileTreatmentException e) {
             e.printStackTrace();
         }
